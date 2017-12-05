@@ -1,0 +1,16 @@
+{
+    "services": {
+        "cloudantNoSQLDB": [{
+            "name": "Cloudant",
+            "label": "cloudantNoSQLDB",
+            "plan": "Lite",
+            "credentials": {
+                "username": "5d153cad-0ac0-4107-a900-5ef9459c9a36-bluemix",
+                "password": "6939a29cff10da9569c1d6a02c4a306b2826c5f6c88813fce84663cedffd8d25",
+                "host": "5d153cad-0ac0-4107-a900-5ef9459c9a36-bluemix.cloudant.com",
+                "port": 443,
+                "url": "https://5d153cad-0ac0-4107-a900-5ef9459c9a36-bluemix:6939a29cff10da9569c1d6a02c4a306b2826c5f6c88813fce84663cedffd8d25@5d153cad-0ac0-4107-a900-5ef9459c9a36-bluemix.cloudant.com"
+              }
+        }]
+    }
+}
