@@ -97,9 +97,19 @@ const deleteCookie = (cname) => {
 const usertInteract = (status) => {
     console.log('User interact method invoked..');
     if (!status) {
-        
-        let div = '<div style="position:absolute;top:0;right:0;left:0;bottom:0;width:100%;height:100%;z-index:999999999;" id="interact_overlay"></div>'
-        document.body.innerHTML = div + document.body.innerHTML;
+		let div = document.createElement('div');
+		div.setAttribute('id','interact_overlay');
+		$(document.body).append(div);
+		$(div).css({
+			'position': 'absolute',
+			'top':0,
+			'right': 0,
+			'left': 0,
+			'bottom': 0,
+			'width': '100%',
+			'height': '100%',
+			'z-index':'999999999'
+		})
     } else {
         $("#interact_overlay").remove();
     }

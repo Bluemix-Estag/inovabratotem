@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     /* Login & Signup Toggle */
@@ -44,7 +42,7 @@ $(document).ready(function () {
                     password
                 }
                 usertInteract(false);
-                
+                setTimeout(function () {
                     xhrPost('/login', data, function (data) {
                         usertInteract(true);
                         console.log(data);
@@ -53,6 +51,7 @@ $(document).ready(function () {
                         usertInteract(true);
                         alert(getMessage(err.error_reason));
                     })
+                }, 5000);
             } else {
                 alert('Password required!');
             }
