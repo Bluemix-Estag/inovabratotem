@@ -10,58 +10,18 @@
 
 const fs = require('fs');
 
-const cfenv = require('cfenv');
+// const cfenv = require('cfenv');
 
 let vcapLocal, appEnvOpts, appEnv, database;
 
 const DATABASE_NAME = "inovabra";
 const USERS_DOCUMENT = "users";
+const LECTURE_DOCUMENT = "lectures";
 
-// const EVENTS_DOCUMENT = "events";
-
-const initDatabase = (callback) => {
-    if (database == undefined) {
-        fs.stat('./buildSrc/vcap.json', (err, stat) => {
-            if (err && err.code === 'ENOENT') {
-                console.log('No vcap.json');
-                callback(true);
-            } else if (err) {
-                console.log('Error retrieving local vcap: ', err.code);
-                callback(true);
-            } else {
-                vcapLocal = require('../vcap.json');
-                console.log('Loaded local VCAP', vcapLocal);
-                appEnvOpts = {
-                    vcap: vcapLocal
-                }
-                initializaAppEnv(callback);
-            }
-        })
-
-    } else {
-        callback(false);
-    }
-
-}
-
-
-const initializaAppEnv = (callback) => {
-    appEnv = cfenv.getAppEnv(appEnvOpts);
-    if (appEnv.isLocal) {
-        require('dotenv').load();
-    }
-
-    if (appEnv.services.cloudantNoSQLDB) {
-        initCloudant(callback);
-    } else {
-        console.log('No Cloudant service exists.');
-        callback(true);
-    }
-}
 
 
 const initCloudant = (callback) => {
-    let cloudantURL = process.env.CLOUDANT_URL || appEnv.services.cloudantNoSQLDB[0].credentials.url || appEnv.getServiceCreds("Cloudant").url;
+    let cloudantURL = process.env.CLOUDANT_URL ;
     let cloudant = require('cloudant')({
         url: cloudantURL,
         plugin: 'retry',
@@ -80,7 +40,7 @@ const initCloudant = (callback) => {
 
     database = cloudant.db.use(DATABASE_NAME);
     checkUsers();
-    // checkEvents();
+    checkLectures();
     callback(false);
 }
 
@@ -114,34 +74,35 @@ const creatUsersDocument = () => {
 }
 
 
-// const checkEvents = () => {
-//     database.get(EVENTS_DOCUMENT, {revs_info: true}, (err,doc) => {
-//         if (err) {
-//             console.log('Creating Events document...');
-//             creatEventsDocument();
-//         } else {
-//             console.log('Events document already exists!');
-//         }
-//     })
-// }
+const checkLectures = () => {
+    database.get(LECTURE_DOCUMENT, {revs_info: true}, (err,doc) => {
+        if (err) {
+            console.log('Creating Lectures document...');
+            createLecturesDocument();
+        } else {
+            console.log('Lectures document already exists!');
+        }
+    })
+}
 
-// const creatEventsDocument = () => {
-//     let doc = {
-//         "events": []
-//     }
-//     database.insert(doc,EVENTS_DOCUMENT, (err, document ) => {
-//         if(err){
-//             console.log('Error on creating events document');
-//         }else{
-//             console.log('Events document created successfully!');
-//         }
-//     })
-// }
+const createLecturesDocument = () => {
+    let doc = {
+        "lectures": []
+    }
+
+    database.insert(doc,LECTURE_DOCUMENT, (err, document ) => {
+        if(err){
+            console.log('Error on creating lectures document');
+        }else{
+            console.log('Lectures document created successfully!');
+        }
+    })
+}
 
 
 const getDatabase = (callback) => {
     if (database == undefined) {
-        initDatabase((error) => {
+        initCloudant((error) => {
             if (error) {
                 callback(database);
             } else {
@@ -158,6 +119,7 @@ const getDatabase = (callback) => {
 
 module.exports = {
     getDatabase,
-    USERS_DOCUMENT
+    USERS_DOCUMENT,
+    LECTURE_DOCUMENT
 };
 
