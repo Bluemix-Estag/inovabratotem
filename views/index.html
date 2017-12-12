@@ -4,48 +4,57 @@
 <head>
   <title>InovaBra</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="/javascripts/facebook.js"></script>
+
 </head>
 
 <body>
+
+
   <div class="user-card round5">
     <div class="login-box">
       <div class="login-form">
-        <input type="email" name="email" class="email" placeholder="Email" id="login_email"/>
-        <input type="password" name="password" class="password" placeholder="password" id="login_password"/>
+        <input type="email" name="email" class="email" placeholder="Email" id="login_email" />
+        <input type="password" name="password" class="password" placeholder="password" id="login_password" />
         <input type="button" name="login" value="Login" class="login" id="btn_login" />
       </div>
 
       <div class="or"></div>
 
-      <a href="#" class="login-with-fb">
-        <span class="icon fa fa-facebook"></span> Login with facebook
-      </a>
-      <a href="https://twitter.com/messages/compose?recipient_id=201586304&text=Hello%20world" data-screen-name="@furni" class="login-with-google">
-        <span class="icon fa fa-google-plus"></span> Login with twitter
-      </a>
 
-    </div>
-    <div class="signup-box">
-      <div class="signup-form" >
-        <input type="text" name="name"  placeholder="Name" id="name" />
-        <input type="email" name="email" class="email" placeholder="Email" id="signup_email" />
-        <input type="password" name="password" class="password" placeholder="Password" id="signup_password" />
-        <input type="password" name="confirm-password" class="confirm-password" placeholder="Confirm password" id="signup_confirm_password" />
-        <input type="submit" name="signup" value="Signup" class="signup" id="btn_signup" />
+      <div class="site_login">
+        <div class="fb-login-button" data-max-rows="1" data-size="large"  data-button-type="continue_with" data-show-faces="false"
+          data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+        <a href="https://twitter.com/messages/compose?recipient_id=201586304&text=Hello%20world" data-screen-name="@furni" class="login-with-google">
+          <span class="icon fa fa-google-plus"></span> Login with twitter
+        </a>
+
+      </div>
+      <div class="signup-box">
+        <div class="signup-form">
+          <input type="text" name="name" placeholder="Name" id="name" />
+          <input type="email" name="email" class="email" placeholder="Email" id="signup_email" />
+          <input type="password" name="password" class="password" placeholder="Password" id="signup_password" />
+          <input type="password" name="confirm-password" class="confirm-password" placeholder="Confirm password" id="signup_confirm_password"
+          />
+          <input type="submit" name="signup" value="Signup" class="signup" id="btn_signup" />
+        </div>
+      </div>
+
+      <!-- Card Footer -->
+
+      <div class="footer">
+        <a class="toggle-link" href="#">Sign Up</a>
       </div>
     </div>
 
-    <!-- Card Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/javascripts/xhr.js"></script>
+    <script src="/javascripts/util.js"></script>
+    <script src="/javascripts/script.js"></script>
+    
 
-    <div class="footer">
-      <a class="toggle-link" href="#">Sign Up</a>
-    </div>
-  </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/javascripts/xhr.js"></script>
-  <script src="/javascripts/util.js"></script>
-  <script src="/javascripts/script.js"></script>
 </body>
 
 </html>

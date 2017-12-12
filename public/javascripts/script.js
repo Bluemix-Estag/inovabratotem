@@ -25,9 +25,7 @@ $(document).ready(function () {
             });
             cardToggle = 0;
         }
-    })
-
-
+    });
 
 
 
@@ -41,17 +39,19 @@ $(document).ready(function () {
                     email,
                     password
                 }
+                
                 usertInteract(false);
-                setTimeout(function () {
-                    xhrPost('/login', data, function (data) {
-                        usertInteract(true);
-                        console.log(data);
-                        // window.location.href = '/home';
-                    }, function (err) {
-                        usertInteract(true);
-                        alert(getMessage(err.error_reason));
-                    })
-                }, 5000);
+                xhrPost('/login', data, function (data) {
+                    setSession('user', data.user);
+                    window.location.href = '/home';
+                }, function (err) {
+                    console.log(err);
+                    
+                    deleteSession('user');
+                    usertInteract(true);
+                    console.log(err.error_reason);
+                    alert(getMessage(err.error_reason));
+                })
             } else {
                 alert('Password required!');
             }
@@ -82,14 +82,13 @@ $(document).ready(function () {
                         email,
                         password
                     }
-
+                    usertInteract(false);
                     xhrPost('/signup', data, function (data) {
-
+                        setSession('user', data.user);
                         window.location.href = '/home';
-
-
                     }, function (err) {
-                        alert('An error occurred');
+                        usertInteract(true);
+                        alert(getMessage(err.error_reason));
                     })
 
 
