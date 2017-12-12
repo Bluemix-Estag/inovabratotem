@@ -47,8 +47,8 @@ app.get('/home', (req, res) => {
 });
 
 
-app.get('/facebookTest', (req,res) => {
-  res.render('facebook.html');
+app.get('/login', (req,res) => {
+  res.render('login.html');
 })
 
 var userDAO = require('./buildSrc/DB/userDAO');

@@ -4,11 +4,23 @@
 <head>
   <title>InovaBra</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <script src="/javascripts/facebook.js"></script>
+  
 
 </head>
 
 <body>
+
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.11&appId=197503220824184';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
 
   <div class="user-card round5">
@@ -21,39 +33,44 @@
 
       <div class="or"></div>
 
+      <input type="button" value="Login" onclick="FB.login();">
 
       <div class="site_login">
-        <div class="fb-login-button" data-max-rows="1" data-size="large"  data-button-type="continue_with" data-show-faces="false"
-          data-auto-logout-link="false" data-use-continue-as="true"></div>
+      <!--   <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false"
+          data-auto-logout-link="true" data-use-continue-as="false"></div> -->
 
         <a href="https://twitter.com/messages/compose?recipient_id=201586304&text=Hello%20world" data-screen-name="@furni" class="login-with-google">
           <span class="icon fa fa-google-plus"></span> Login with twitter
         </a>
 
       </div>
-      <div class="signup-box">
-        <div class="signup-form">
-          <input type="text" name="name" placeholder="Name" id="name" />
-          <input type="email" name="email" class="email" placeholder="Email" id="signup_email" />
-          <input type="password" name="password" class="password" placeholder="Password" id="signup_password" />
-          <input type="password" name="confirm-password" class="confirm-password" placeholder="Confirm password" id="signup_confirm_password"
-          />
-          <input type="submit" name="signup" value="Signup" class="signup" id="btn_signup" />
-        </div>
-      </div>
-
-      <!-- Card Footer -->
-
-      <div class="footer">
-        <a class="toggle-link" href="#">Sign Up</a>
+    </div>
+    <div class="signup-box">
+      <div class="signup-form">
+        <input type="text" name="name" placeholder="Name" id="name" />
+        <input type="email" name="email" class="email" placeholder="Email" id="signup_email" />
+        <input type="password" name="password" class="password" placeholder="Password" id="signup_password" />
+        <input type="password" name="confirm-password" class="confirm-password" placeholder="Confirm password" id="signup_confirm_password"
+        />
+        <input type="submit" name="signup" value="Signup" class="signup" id="btn_signup" />
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/javascripts/xhr.js"></script>
-    <script src="/javascripts/util.js"></script>
-    <script src="/javascripts/script.js"></script>
-    
+
+
+    <!-- Card Footer -->
+
+    <div class="footer">
+      <a class="toggle-link" href="#">Sign Up</a>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/xhr.js"></script>
+  <script src="/javascripts/util.js"></script>
+  <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/facebook.js"></script>
+
 
 </body>
 
