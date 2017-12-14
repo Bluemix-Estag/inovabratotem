@@ -1,30 +1,14 @@
-<!doctype html>
-<html class="no-js" lang="pt_BR" id="inovabra">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inovaBra - Bradesco</title>
-    <meta name="description" content="Ecossistema de inovação colaborativa do Bradesco. Conheça aqui todos os programas e iniciativas."
-    />
-    <link rel="stylesheet" href="/vendor/css/inovabra.css">
-    <link rel="stylesheet" href="/stylesheets/home.css">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.inovabra.com.br/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.inovabra.com.br/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.inovabra.com.br/assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="https://www.inovabra.com.br/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="https://www.inovabra.com.br/assets/img/favicons/safari-pinned-tab.svg" color="#d9293d">
-    <link rel="shortcut icon" href="https://www.inovabra.com.br/assets/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="https://www.inovabra.com.br/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="inovaBra - Bradesco" />
-    <meta property="og:description" content="Ecossistema de inovação colaborativa do Bradesco. Conheça aqui todos os programas e iniciativas."
-    />
-    <meta name="twitter:title" content="inovaBra - Bradesco">
-    <meta name="twitter:description" content="Ecossistema de inovação colaborativa do Bradesco. Conheça aqui todos os programas e iniciativas."
-    />
+    <title>InovaBra</title>
+    <link href="/stylesheets/home.css" rel="stylesheet" />
+    <link href="/stylesheets/materialize.css" rel="stylesheet" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/javascripts/util.js"></script>
     <script>
         if (!sessionCheck('user')) {
@@ -34,507 +18,49 @@
     </script>
 </head>
 
-<body class="bg-inovabra">
-    <header class="header-inovabra grid-new">
-        <div class="container">
-            <div class="row">
-                <div class="small-8 large-6 columns">
-                    <h1 class="logo">
-                        <a href="" title="Home" class="tr-header" data-tr="Clique_Logo">
-                            <img src="https://www.inovabra.com.br/assets/img/landing/logo-inovabra.png" title="InovaBra - Bradesco">
-                        </a>
-                    </h1>
-                    <a href="javascript:;" class="btn-menu mobile" title="Menu">
-                        <svg width="19" height="13" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.176.5h16.716m-16.716 6h16.716m-16.716 6h16.716" stroke="#FFF" fill="none" stroke-linecap="square" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="large-6 columns text-right">
-                    <nav class="nav-landing text-right">
-                        <span class="element-click mobile"></span>
-                        <a href="javascript:;" class="btn-closed-menu mobile">
-                            <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0l17.678 17.678M1 17.678L18.678 0" stroke="#FFF" fill="none" stroke-linecap="square" />
-                            </svg>
-                        </a>
-                        <a href="" title="#omovimento" class="tr-header smooth" data-tr="Clique_Item_Home">Home</a>
-                        <a href="javascript:;" title="Ecossistema" class="tr-header tr-ecossistema menu-iniciativas js-menu-iniciativas" data-tr="Clique_Item_Ecossistema">Ecossistema</a>
-                        <a href="https://inovabrahub.com.br" title="Conecte-se ao hub" class="tr-header" data-tr="Clique_Item_Conecte se ao HUB">Conecte-se ao hub</a>
-                        <a href="javascript:;" title="Contato" class="tr-header" data-open="contact" data-tr="Clique_Item_Contato">Contato</a>
-                        <a href="javascript:chatToggle();" title="Contato" class="tr-header">Chat</a>
-                    </nav>
-                </div>
+<body>
+
+    <div class="header">
+        <nav class="transparent z-depth-0">
+            <div class="nav-wrapper transparent">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                </ul>
             </div>
-        </div>
-    </header>
-    <div class="geo-container">
-        <img src="https://www.inovabra.com.br/assets/img/home-landing/geodesica-vermelha.png" class="geo-fallback-vermelho">
-        <div id="h-canvas"></div>
+        </nav>
     </div>
-
-    <div class="sidemenu-ecossistemas js-ecossistemas">
-        <div class="menu-container js-menu-geodesica">
-            <img src="https://www.inovabra.com.br/assets/img/home-landing/bg-circle.png" alt="" class="bg-circle">
-            <!-- <a href="javascript:;" class="js-voltar-landing">Teste</a> -->
-            <ul class="menu-geodesica">
-                <li class="i-polos">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-polos" data-tr='["InovaBRA_Ecossistema","Clique_Item_Polos"]'>
-                        polos
-                    </a>
-                </li>
-                <li class="i-pesquisa">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-pesquisa" data-tr='["InovaBRA_Ecossistema","Clique_Item_Pesquisa"]'>
-                        pesquisa
-                    </a>
-                </li>
-                <li class="i-algoritmos">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-algoritmos" data-tr='["InovaBRA_Ecossistema","Clique_Item_Algoritmos"]'>
-                        inteligência artificial
-                    </a>
-                </li>
-                <li class="i-ventures">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-ventures" data-tr='["InovaBRA_Ecossistema","Clique_Item_Ventures"]'>
-                        ventures
-                    </a>
-                </li>
-                <li class="i-startups">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-startups" data-tr='["InovaBRA_Ecossistema","Clique_Item_StartUps"]'>
-                        startups
-                    </a>
-                </li>
-                <li class="i-internacional">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-internacional" data-tr='["InovaBRA_Ecossistema","Clique_Internacional"]'>
-                        internacional
-                    </a>
-                </li>
-                <li class="i-habitat">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-habitat" data-tr='["InovaBRA_Ecossistema","Clique_Item_Habitat"]'>
-                        habitat
-                    </a>
-                </li>
-                <li class="i-lab">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-lab" data-tr='["InovaBRA_Ecossistema","Clique_Item_Lab"]'>
-                        lab
-                    </a>
-                </li>
-                <li class="i-hub">
-                    <a href="javascript:;" class="js-open-item tr-link" data-show="d-hub" data-tr='["InovaBRA_Ecossistema","Clique_Item_HUB"]'>
-                        hub
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- <a href="javascript:;" class="js-teste-zoom">TESTE ZOOM</a> -->
-        <div class="geo-container2">
-            <img src="https://www.inovabra.com.br/assets/img/home-landing/geodesica-branca.png" class="geo-fallback-branca">
-            <div id="h-canvas2"></div>
-        </div>
-
-        <div class="desc-container">
-            <div class="desc-item d-internacional">
-                <p class="bg-text">internacional</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Internacional","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> internacional</h2>
-                    <p>
-                        Um laboratório de inovação em Nova Iorque para prospectar startups internacionais, descobrir novos modelos de negócios e
-                        acompanhar de perto as principais tendências tecnológicas e comportamentais pelo mundo.
-                    </p>
-                    <a href="/internacional/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Internacional","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+    <div class="main-body" id="main-body">
+        <div class="main" id="main"></div>
+        <div class="bot" id="bot">
+            <div class="img-logo hide" id="gif-holder">
+                <img src="/gifs/watson2.gif" width="80px" height="80px">
             </div>
-            <div class="desc-item d-ventures">
-                <p class="bg-text">ventures</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Ventures","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> ventures</h2>
-                    <p>
-                        Fundo de investimentos do Bradesco em startups, no modelo de corporate venture, com R$ 100 milhões de capital proprietário.
-                        Sua tese de investimentos é focada em plataformas digitais, blockchain, big data e inteligência artificial.
-                    </p>
-                    <a href="/ventures/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Ventures","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+            <div class="img-logo hide" id="gif1-holder">
+                <img src="/gifs/watson.gif" width="60px" height="60px">
             </div>
-            <div class="desc-item d-hub">
-                <p class="bg-text">hub</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Hub","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> hub</h2>
-                    <p>
-                        A rede que conecta o inovaBra e o ecossistema de inovação brasileiro. Uma plataforma digital colaborativa de empreendedorismo
-                        e inovação que conecta empresas, startups, profissionais e agentes do ecossistema de empreendedorismo
-                        e inovação brasileiro, dando acesso a conteúdos exclusivos e desafios reais de negócios.
-                    </p>
-                    <a href="https://inovabrahub.com.br/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Hub","Clique_Botao_Conectese"]'>Conecte-se ao hub
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                    <!-- <a href="javascript:;" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBra","InovaBra_Programas","Clique_hub_Conheça"]'>Em breve no ar <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
-                </div>
+            <h4 class="bot-text" id="test"></h4>
+            <br>
+            <br>
+            <div class="row hide" id="ref-btn">
+                <button class="btn btn-small blue lighten-1">Referencias</button>
             </div>
-            <div class="desc-item d-startups">
-                <p class="bg-text">startups</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Startups","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> startups</h2>
-                    <p>
-                        Programa de inovação aberta do Bradesco que dá a oportunidade para as startups trabalharem com clientes reais, testarem soluções
-                        na prática e crescerem com escala. Em três edições, já foram avaliados 1.600 projetos, com 20 pilotos
-                        realizados em diversos temas.
-                    </p>
-                    <a href="/startups/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Startups","Clique_Botao_Conheca"]'>Conheça a iniciativa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="desc-item d-habitat">
-                <p class="bg-text">habitat</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Habitat","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> habitat</h2>
-                    <p>
-                        Um ambiente de co-inovação de 22.000 m
-                        <sup>2</sup> que é a tradução perfeita do ecossistema inovaBra. Aqui, empresas e startups selecionadas
-                        pelo banco trabalham lado a lado com fornecedores de tecnologia, consultorias, aceleradoras e fundos
-                        de investimento para gerar negócios por meio de networking e colaboração.
-                    </p>
-                    <a href="/habitat/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Habitat","Clique_Botao_Conheca"]'>Conheça o habitat
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="desc-item d-pesquisa">
-                <p class="bg-text">pesquisa</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Pesquisa","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> pesquisa</h2>
-                    <p>
-                        Uma equipe de estudos que analisa novas tecnologias, tendências, comportamentos de consumo e a forma como impactam os modelos
-                        de negócios do setor financeiro.
-                    </p>
-                    <a href="/pesquisas/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Pesquisas","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="desc-item d-lab">
-                <p class="bg-text">lab</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Lab","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> lab</h2>
-                    <p>
-                        Um espaço de trabalho colaborativo feito para aumentar a capacidade de inovação do banco e acelerar o processo de homologação
-                        de novas soluções. Empresas de tecnologia parceiras do Bradesco contam com estrutura de laboratórios
-                        e arena de eventos para realizar demonstrações, sessões de ideação e prototipação.
-                    </p>
-                    <a href="/lab/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Lab","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="desc-item d-polos">
-                <p class="bg-text">polos</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Polos","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span> polos</h2>
-                    <p>
-                        Inovação nas áreas de negócios do próprio banco. São mais de 100 funcionários dedicados a buscar novos modelos de serviços,
-                        produtos e soluções que tragam experiências ainda melhores para os clientes.
-                    </p>
-                    <a href="/polos/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Polos","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="desc-item d-algoritmos">
-                <p class="bg-text">inteligência artificial</p>
-                <div class="desc-cont">
-                    <a href="javascript:;" class="btn-voltar js-voltar-anim tr-link" data-tr='["InovaBRA_Ecossistema_Algorítmos","Clique_Botao_Voltar"]'>Voltar</a>
-                    <h2>
-                        <span>inovaBra</span>
-                        <br />inteligência artificial</h2>
-                    <p>
-                        Inovação a partir da utilização inteligente de dados do próprio banco. Em nosso centro de excelência, uma equipe de cientistas
-                        de dados é também responsável pela aplicação de inteligência artificial e computação cognitiva, com
-                        intuito de melhorar continuamente a interação dos clientes com o Bradesco.
-                    </p>
-                    <a href="/algoritmos-ai/" class="btn _size-1 _primary-color btn-header tr-link" data-tr='["InovaBRA_Ecossistema_Algoritmos","Clique_Botao_Conheca"]'>Conheça o programa
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+            <br>
+            <br>
+            <div class="row input-holder">
+                <input type="text" class="col s12" id="chatInput" placeholder="Digite aqui" onkeypress="return newEvent(event);" style="color:white"
+                />
             </div>
         </div>
     </div>
 
-    <section class="wrapper-step-1 grid-new">
-        <div class="scroll-down tr-link" data-tr='["InovaBra","InovaBra_OMovimento","Clique_Continuar"]'>
-            <span>deslize para continuar</span>
-            <svg width="29" height="17" viewBox="0 0 29 17" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.017 1.887l13.255 12.6 13.58-12.6" stroke-width="3" stroke="#FFF" fill="none" />
-            </svg>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="large-12 columns">
-                    <div class="container-element">
-                        <h2>
-                            Inovar é apostar no amanhã
-                        </h2>
-                        <p>
-                            Bem-vindo ao inovaBra. Um movimento do Bradesco que aposta no futuro da inovação no Brasil.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="grid-new full-height sec-movimento js-move-middle tr-scroll" data-tr='["InovaBRA_Home","Scroll_Sobre o InovaBRA"]'
-        id="omovimento">
-        <div class="dest-text">
-            <div class="main-image">
-                <h2>Sobre o inovaBra</h2>
-            </div>
-            <div class="text-aux">
-                <div class="center-text">
-                    <h2>Sobre o inovaBra</h2>
-                    <p>O inovaBra é um movimento criado para promover a inovação dentro e fora do Bradesco. Uma missão que cumprimos
-                        por meio de um
-                        <strong>ecossistema de programas</strong> que abrangem aquisições estratégicas, inovação interna e
-                        <strong>co-inovação</strong>.</p>
-                </div>
-            </div>
-        </div>
-        <div class="dest-image"></div>
-    </section>
-
-    <section class="grid-new full-height sec-aprimorar tr-scroll" data-tr='["InovaBRA_Home","Scroll_CO Inovacao"]'>
-        <div class="dest-text">
-            <div class="main-image">
-                <h2>Co-inovação. A maior aposta do inovaBra</h2>
-            </div>
-            <div class="text-aux">
-                <div class="center-text">
-                    <h2>Co-inovação. A maior aposta do inovaBra.</h2>
-                    <p>Inovar não é fácil. Por isso, acreditamos no caminho da
-                        <strong>co-inovação</strong>. A colaboração entre empresas, startups, investidores, mentores e equipes internas
-                        unidas por desafios para que a inovação aconteça mais e melhor.</p>
-                </div>
-            </div>
-        </div>
-        <div class="dest-image"></div>
-    </section>
-
-    <section class="grid-new full-height sec-apostar tr-scroll" data-tr='["InovaBRA_Home","Scroll_O Movimento"]'>
-        <div class="dest-image"></div>
-        <div class="dest-text">
-            <div class="main-image">
-                <h2>O movimento para quem sabe olhar pra frente</h2>
-            </div>
-            <div class="text-aux">
-                <div class="center-text">
-                    <h2>O movimento para quem sabe olhar pra frente</h2>
-                    <p>São as pessoas certas no lugar certo para gerar negócios e tirar soluções inovadoras do papel. Uma seleção
-                        de empresas e startups feita pelo próprio Bradesco para garantir a integração adequada em cada projeto.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="grid-new full-height sec-faca-parte tr-scroll" data-tr='["InovaBRA_Home","Scroll_Aposte no Amanha"]'>
-        <div class="dest-text">
-            <div class="main-image">
-                <h2>APOSTE NO AMANHÃ COM O INOVABRA</h2>
-            </div>
-            <div class="text-aux">
-                <div class="center-text">
-                    <h2>APOSTE NO AMANHÃ COM O INOVABRA</h2>
-                    <p>Saiba mais sobre nossos programas e veja como o inovaBra pode trazer grandes oportunidades de negócio
-                        dentro do cenário de inovação.</p>
-                    <a href="javascript:;" title="Conheça o ecossistema" class="btn _size-1 _primary-color btn-iniciativas js-menu-iniciativas tr-link"
-                        data-tr='["InovaBRA_Home","Clique_Conheca o Ecossistema"]'>
-                        Conheça o ecossistema
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="dest-image"></div>
-    </section>
-
-    <div class="full reveal modal-contact" id="contact" data-reveal>
-        <div class="container">
-            <div class="row">
-                <div class="large-12 columns">
-                    <h1 class="logo">
-                        <img src="https://www.inovabra.com.br/assets/img/landing/logo-inovabra.png" title="InovaBra - Bradesco - Habitat">
-                    </h1>
-                    <button class="close-button text-right tr-link" data-tr='["InovaBRA_Contato","Clique_Botao_Fechar"]' data-close aria-label="Fechar"
-                        type="button">
-                        <span>Fechar</span>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-5 columns">
-                    <h2>
-                        Fale
-                        <br/> Conosco
-                    </h2>
-                    <p>Quer tirar alguma dúvida ou fechar uma parceria? Escreva aqui a sua mensagem.</p>
-                    <!-- <p class="social">Siga o inovaBra nas redes sociais</p>
-        <a href="javascript:;" class="icon-social"></a>
-        <a href="javascript:;" class="icon-social"></a> -->
-                </div>
-                <div class="large-5 columns">
-                    <form class="row form-send" method="post" action="./form/Default3.aspx" data-abide novalidate>
-                        <input type="hidden" name="area" value="Fale Conosco">
-                        <div class="box">
-                            <div class="large-12 columns ffl-wrapper">
-                                <label class="ffl-label" for="name">Seu nome</label>
-                                <input type="text" name="nome" id="name" class="input tr-form" data-tr='["InovaBRA_Contato","Preencheu_Seu nome"]' title="Seu nome"
-                                    autocomplete="off" required>
-                            </div>
-                            <div class="large-12 columns ffl-wrapper">
-                                <label class="ffl-label" for="company">Empresa (opcional)</label>
-                                <input type="text" name="empresa" id="company" class="input tr-form" data-tr='["InovaBRA_Contato","Preencheu_Empresa"]' title="Empresa (opcional)"
-                                    autocomplete="off">
-                            </div>
-                            <div class="large-12 columns ffl-wrapper">
-                                <label class="ffl-label" for="phone">Telefone</label>
-                                <input type="text" name="telefone" id="phone" class="input phone tr-form" data-tr='["InovaBRA_Contato","Preencheu_Telefone"]'
-                                    title="Telefone" autocomplete="off" required>
-                            </div>
-                            <div class="large-12 columns ffl-wrapper">
-                                <label class="ffl-label" for="email">E-mail</label>
-                                <input type="email" name="email" id="email" class="input tr-form" data-tr='["InovaBRA_Contato","Preencheu_Email"]' title="E-mail"
-                                    autocomplete="off" required>
-                            </div>
-                            <!-- <div class="large-12 columns">
-                        <div class="select-default">
-                          <select name="subject" id="subject" title="Assunto">
-                            <option>Assunto</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                          </select>
-                        </div>
-                      </div> -->
-                            <div class="large-12 columns ffl-wrapper">
-                                <label class="ffl-label" for="message">Mensagem</label>
-                                <textarea name="mensagem" id="message" class="textarea tr-form" data-tr='["InovaBRA_Contato","Preencheu_Mensagem"]' title="Mensagem"
-                                    autocomplete="off" required></textarea>
-                            </div>
-                            <div class="large-12">
-                                <button class="btn btn-send _size-1 _primary-color tr-link" data-tr='["InovaBRA_Contato","Clique_Botao_Enviar"]' title="Enviar">
-                                    <span>Enviar</span>
-                                </button>
-                                <div class="invalid">
-                                    <p>A mensagem não pode ser enviada</p>
-                                    <p class="error">Certifique-se de que preencheu todos os campos e tente novamente.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="success-message">
-                        <h3>Mensagem enviada!</h3>
-                        <p>Obrigado por entrar em contato conosco, responderemos em breve.</p>
-                        <button class="btn btn-voltar _size-1 _primary-color" data-close aria-label="Voltar ao início" type="button">
-                            Voltar ao inicio
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+    <div class="footer" style="color:white; text-align: center;">
+        <a href="https://codebakery.mybluemix.net" target="_blank">
+            <img src="../gifs/casa_logo_branco.gif" style="width: 16%">
+        </a>
     </div>
-
-
-    <!-- Chat -->
-    <div id="chatHandler">
-        <div class="chat_header">
-            <span class="title">Chat With Watson</span>
-            <a href="javascript:closeChat();" class="close_btn">
-                <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 0l17.678 17.678M1 17.678L18.678 0" stroke="#FFF" fill="none" stroke-linecap="square"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="chat_body" id="chat_body">
-          
-        </div>
-        <div class="chat_footer">
-            <input type="text" placeholder="Type a message.." id="chat_input" onkeypress="sendMessageOnEnter(event);"/>
-            <img src="/images/send_btn.png" class="send_btn" id="send_btn"  >
-        </div>
-    </div>
-
-
-
-
-
-    <footer class="footer-habitat">
-        <div class="container">
-            <div class="row">
-                <div class="small-6 large-6 columns text-left">
-                    <h2 class="logo-footer">
-                        <img src="https://www.inovabra.com.br/assets/img/landing/inovabra-gray.png" alt="inovaBra">
-                    </h2>
-                </div>
-                <div class="small-6 large-6 columns social-media mobile">
-                    <!--<a href="javascript:;" title="Link para o facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="javascript:;" title="Link para o twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
-                </div>
-
-                <div class="large-4 large-6 columns desk text-right">
-                    <nav class="nav-footer">
-                        <ul>
-                            <li>
-                                <a href="javascript:;" title="O Movimento" class="smooth tr-link" data-tr='["InovaBRA_Home_Rodape","Clique_Item_Home"]'>Home</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" title="Programas" class="js-menu-iniciativas tr-link" data-tr='["InovaBRA_Home_Rodape","Clique_Item_Ecossistema"]'>Ecossistema</a>
-                            </li>
-                            <li>
-                                <a href="https://inovabrahub.com.br" title="Conecte-se ao hub" class="tr-link" data-tr='["InovaBRA_Home_Rodape","Clique_Item_Conecte se ao HUB"]'>Conecte-se ao hub</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" title="Contato" class="tr-link" data-tr='["InovaBRA_Home_Rodape","Clique_Item_Contato"]'>Contato</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="large-2 columns social-media text-right desk">
-                    <!--<a href="javascript:;" title="Link para o facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="javascript:;" title="Link para o twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="https://use.fontawesome.com/ce46a23b43.js"></script>
-    <!-- <script src="/vendor/cdn/threejs.min.js"></script> -->
-    <script src="/vendor/cdn/TweenMax.min.js"></script>
-    <script src="https://www.inovabra.com.br/assets/js/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/materialize.js"></script>
     <script src="/javascripts/xhr.js"></script>
     <script src="/javascripts/home.js"></script>
-
 </body>
 
 </html>

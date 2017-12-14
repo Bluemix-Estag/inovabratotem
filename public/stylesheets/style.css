@@ -171,25 +171,12 @@ input:focus {
   opacity: 1;
 }
 
-.login-with-fb {
-  background: #527EBF
-}
+
 
 .login-with-google {
   background: #00aced ;
 }
 
-.login-with-fb .icon,
-.login-with-google .icon {
-  float: left;
-  font-size: 21px;
-  width: 50px;
-  height: 26px;
-  margin: 7px;
-  padding: 2px;
-  text-align: center;
-  border-right: 1px solid #fff;
-}
 
 
 /**** footer *****/
@@ -226,4 +213,26 @@ input:focus {
       -ms-transform: scale(1, 1);
       -webkit-transform: scale(1, 1);
   }
+}
+
+
+/* Custom */
+
+.btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.fb_icon{
+  width: 40px;
+  height: 40px;
+}
+.divider{
+  margin-right: 10px; 
+}
+.fb_btn{
+  background-color: #4267b2;
+  color: #fff;
+  text-align: center;
 }

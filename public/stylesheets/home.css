@@ -1,219 +1,212 @@
-#chatHandler {
-    position: fixed;
-    z-index: 9999999;
-    top: 0;
-    right: -30%;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 30%;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100%;
-    
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
+    font-family: 'tradegothiclt-bold', sans-serif;
+}
+
+body {
+    /*height: 60%;*/
     display: flex;
     flex-direction: column;
-    justify-content: space-between
-    
-}
-.close_btn{
-    margin-top: 3px;
+    justify-content: space-between;
+    background-image: url(/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#closeDiv {
-    position: fixed;
-    z-index: 9999999;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    
-    width: 70%;
+.header,
+.footer {
+    margin: 0 !important;
+    padding: 0 !important;
+/*    height: 10%;*/
+    padding-bottom: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.img-logo{
+    width:  100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-body {
     height: 100%;
+    display: flex;
 }
 
-@keyframes showChat {
+.animate-main-in {
+    animation: fadeMainIn;
+}
+
+.animate-main-out {
+    animation: fadeMainOut;
+}
+
+.main {
+    visibility: visible;
+    width: 0;
+    background-color: rgba(100, 100, 100, 0.67);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    overflow-y: scroll;
+}
+
+.animate-bot-in {
+    animation: fadeBotOut;
+}
+
+.animate-bot-out {
+    animation: fadeBotIn;
+}
+
+.bot {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    width: 100%;
+}
+.input-holder{
+    /*max-height: 30px;*/
+    width: 70%;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 20px !important;
+}
+
+#chatInput{
+    border-bottom: 1px solid #42a5f5 !important;
+}
+
+.bot-text {
+    text-align: center !important;
+    font-style: italic;
+}
+
+*{
+    font-size: 16px !important;
+}
+
+
+@keyframes fadeMainIn {
     from {
-        right: -30%;
+        width: 0%;
     }
     to {
-        right: 0;
+        width: 70%;
     }
 }
-@keyframes closeChat {
-    from{right: 0%;}
-    to{right: -30%;}
+
+@keyframes fadeMainOut {
+    from {
+        width: 70%;
+    }
+    to {
+        width: 0%;
+    }
 }
 
-@media screen and  (max-width: 600px) {
-
-    #closeDiv{
-        display: none;
-
+@keyframes fadeBotOut {
+    from {
+        width: 100%
     }
-    #chatHandler{
-        width: 100%;
-        right: -100%;
-    }
-
-    @keyframes showChat {
-        from {
-            right: -100%;
-        }
-        to {
-            right: 0;
-        }
-    }
-    @keyframes closeChat {
-        from{right: 0%;}
-        to{right: -100%;}
-    }
-
-}
-
-@media  screen and (min-width: 600px) and (max-width:900px) {
-    #closeDiv{
+    to {
         width: 30%;
     }
-    #chatHandler{
-        width: 70%;
-        right: -70%;
-        
+}
+
+@keyframes fadeBotIn {
+    from {
+        width: 30%
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+
+h4 {
+    font-size: 5em;
+    color: white;
+    text-transform: uppercase;
+}
+
+#caret {
+    border-right: .05em solid/;
+/*            border: none;*/
+    animation: caret 2s steps(10) infinite;
+}
+
+@keyframes caret {
+    50% {
+        border: transparent;
+    }
+}
+
+
+
+/*  Materialize Input */
+
+:-moz-placeholder{
+    text-align: center;
+}
+
+
+::-webkit-input-placeholder{
+    text-align: center;
+}
+
+:-ms-input-placeholder{
+    text-align: center;
+}
+
+/*Table e Modal*/
+#modal1{
+    overflow: hidden;
     }
 
-    @keyframes closeChat {
-        from{right: 0%;}
-        to{right: -70%;}
-    }
+thead, tbody tr {
+display:table;
+width:100%;
+table-layout:fixed;
+}
 
-    @keyframes showChat {
-        from {
-            right: -70%;
-        }
-        to {
-            right: 0;
-        }
-    }
-
+tbody {
+display:block;
+max-height: 450px;
+overflow:auto;
+}
+thead {
+width: calc( 100% - 1em )
+}
+table {
+width:100%;
+height: 100% !important;
 }
 
 
-@media  screen and (min-width: 901px) and (max-width:1300px) {
-    #closeDiv{
-        width: 60%;
-    }
-    #chatHandler{
-        width: 40%;
-        right: -40%;
-        
-    }
 
-    @keyframes closeChat {
-        from{right: 0%;}
-        to{right: -40%;}
-    }
-
-    @keyframes showChat {
-        from {
-            right: -40%;
-        }
-        to {
-            right: 0;
-        }
-    }
-
-}
-
-.chat_header{
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-.chat_header .title{
-    font-size: 18pt;
-    
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23%;
 }
 
 
-.chat_body{
-    flex-basis: 82%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    overflow-y: scroll;
-    padding: 0 20px 0 20px;
-    
+.custom-table{
+  text-align: center;
 }
-
-.bubble{
-    padding: 12px;
-    border-radius: 20px;
-    margin-top: 10px;
-    min-width: 40px;
-    max-width: 80%;
-    /* Wrap link tag */
-    white-space: pre-wrap; /* css-3 */    
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */    
-    white-space: -o-pre-wrap; /* Opera 7 */    
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
-
-}
-
- .bubble a{
-    color: #0000EE;
-} 
-.bubble a:hover{
-    
-    text-decoration: underline;
-} 
-
-
-
-
-.watson{
-    background-color: #C93C44;
-    color: #fff;
-}
-
-.user{
-    background-color: rgb(189, 189, 189);
-    align-self: flex-end;
-}
-
-.chat_footer{
-    
-    padding: 15px 10px 15px 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-
-#chat_input{
-    width: 80%;
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    border-bottom: 1px solid #fff; 
-}
-
-.send_btn{
-    cursor: pointer;
-    width: 28px;
-    height: 28px;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #fff;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: #fff;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: #fff;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: #fff;
-  }
